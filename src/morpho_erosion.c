@@ -119,22 +119,22 @@ void line_erosion3_ui8matrix_ilu3(uint8 **X, int i, int j0, int j1, uint8 **Y)
     for (int j = j0; j<=j1-r-1; j+=3) {
 
         store2(Y, i, j, ui8min9(load2(X, i-1, j-1), load2(X,i-1, j), load2(X, i-1, j+1),
-                       load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
-                       load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
+                                load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
+                                load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
 
         store2(Y, i, j+1, ui8min9(load2(X, i-1, j), load2(X,i-1, j+1), load2(X, i-1, j+2),
-                       load2(X, i  , j), load2(X, i , j+1), load2(X, i  , j+2),
-                       load2(X, i+1, j), load2(X, i+1,j+1), load2(X, i+1,j+2)));
+                                  load2(X, i  , j), load2(X, i , j+1), load2(X, i  , j+2),
+                                  load2(X, i+1, j), load2(X, i+1,j+1), load2(X, i+1,j+2)));
 
         store2(Y, i, j+2, ui8min9(load2(X, i-1, j+1), load2(X,i-1, j+2), load2(X, i-1, j+3),
-                       load2(X, i  , j+1), load2(X, i , j+2), load2(X, i  , j+3),
-                       load2(X, i+1, j+1), load2(X, i+1,j+2), load2(X, i+1,j+3)));
+                                  load2(X, i  , j+1), load2(X, i , j+2), load2(X, i  , j+3),
+                                  load2(X, i+1, j+1), load2(X, i+1,j+2), load2(X, i+1,j+3)));
     
     }
     for (int j=j1-r; j < j1; j++) {
         store2(Y, i, j, ui8min9(load2(X, i-1, j-1), load2(X,i-1, j), load2(X, i-1, j+1),
-                       load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
-                       load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
+                                load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
+                                load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
     }
 }
 // -------------------------------------------------------------------------------
@@ -199,8 +199,8 @@ void line_erosion3_ui8matrix_ilu3_red(uint8 **X, int i, int j0, int j1, uint8 **
     if (r) {
         for (int j=j1-r-1; j <= j1; j++) {
             store2(Y, i, j, ui8min9(load2(X, i-1, j-1), load2(X,i-1, j), load2(X, i-1, j+1),
-                        load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
-                        load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
+                                    load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
+                                    load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
         
         }
     }
@@ -212,27 +212,26 @@ void line_erosion3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8 **
 {
     uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y;
     
-
-    x0 = load2(X, i-1, j0-1);
-    x1 = load2(X, i, j0-1);
-    x2 = load2(X, i+1, j0-1);
-
-    x3 = load2(X, i+2, j0-1);
-
-    ra = ui8min3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8min3(x1, x2, x3);
-    
-
-    x0 = load2(X, i-1, j0);
-    x1 = load2(X, i, j0);
-    x2 = load2(X, i+1, j0);
-
-    x3 = load2(X, i+2, j0);
-
-    rb = ui8min3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8min3(x1, x2, x3);
-    
     for (int j = j0; j<= j1; j++) {
+        x0 = load2(X, i-1, j-1);
+        x1 = load2(X, i, j-1);
+        x2 = load2(X, i+1, j-1);
+
+        x3 = load2(X, i+2, j-1);
+
+        ra = ui8min3(x0,x1,x2); //reduction de la premiere colonne
+        ra1 = ui8min3(x1, x2, x3);
+        
+
+        x0 = load2(X, i-1, j);
+        x1 = load2(X, i, j);
+        x2 = load2(X, i+1, j);
+
+        x3 = load2(X, i+2, j);
+
+        rb = ui8min3(x0,x1,x2); //reduction de la deuxieme colonne
+        rb1 = ui8min3(x1, x2, x3);
+
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);
         x2 = load2(X, i+1, j+1);
@@ -312,27 +311,28 @@ void line_erosion3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, uin
 
     uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y0, y1, y2;
 
-    x0 = load2(X, i-1, j0-1);
-    x1 = load2(X, i, j0-1);
-    x2 = load2(X, i+1, j0-1);
-
-    x3 = load2(X, i+2, j0-1);
-
-    ra = ui8min3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8min3(x1, x2, x3);
-    
-
-    x0 = load2(X, i-1, j0);
-    x1 = load2(X, i, j0);
-    x2 = load2(X, i+1, j0);
-
-    x3 = load2(X, i+2, j0);
-
-    rb = ui8min3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8min3(x1, x2, x3);
-
     int j;
+
     for (j = j0; j< j1-r-1; j+=3) {
+
+        x0 = load2(X, i-1, j-1);
+        x1 = load2(X, i, j-1);
+        x2 = load2(X, i+1, j-1);
+
+        x3 = load2(X, i+2, j-1);
+
+        ra = ui8min3(x0,x1,x2); //reduction de la premiere colonne
+        ra1 = ui8min3(x1, x2, x3);
+        
+
+        x0 = load2(X, i-1, j);
+        x1 = load2(X, i, j);
+        x2 = load2(X, i+1, j);
+
+        x3 = load2(X, i+2, j);
+
+        rb = ui8min3(x0,x1,x2); //reduction de la deuxieme colonne
+        rb1 = ui8min3(x1, x2, x3);
 
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);

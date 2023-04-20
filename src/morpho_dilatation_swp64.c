@@ -362,25 +362,25 @@ void line_dilatation3_ui64matrix_swp64_elu2_red(uint64 **X, int i, int j0, int j
 {
     uint64 a, b, c, d, x, y, ca1, ca2, cb1, cb2, cc1, cc2, res; 
     
-    a = load2(X, i-1, j0-1);
-    b = load2(X, i, j0-1);
-    c = load2(X, i+1, j0-1);
-
-    d = load2(X, i+2, j0-1);
-    
-    ca1 = ui64max3(a, b, c);
-    ca2 = ui64max3(b, c, d);
-
-    a = load2(X, i-1, j0);
-    b = load2(X, i, j0);
-    c = load2(X, i+1,j0);
-
-    d = load2(X, i+2, j0);
-
-    cb1 = ui64max3(a, b, c);
-    cb2 = ui64max3(b, c, d);
-
     for (int j=j0; j<=j1; j++) {
+
+        a = load2(X, i-1, j-1);
+        b = load2(X, i, j-1);
+        c = load2(X, i+1, j-1);
+
+        d = load2(X, i+2, j-1);
+        
+        ca1 = ui64max3(a, b, c);
+        ca2 = ui64max3(b, c, d);
+
+        a = load2(X, i-1, j);
+        b = load2(X, i, j);
+        c = load2(X, i+1,j);
+
+        d = load2(X, i+2, j);
+
+        cb1 = ui64max3(a, b, c);
+        cb2 = ui64max3(b, c, d);
 
         a = load2(X, i-1, j+1);
         b = load2(X, i, j+1);
@@ -468,6 +468,159 @@ void line_dilatation3_ui64matrix_swp64_elu2_red_factor(uint64 **X, int i, int j0
 // ------------------------------------------------------------------------------------------------
 void line_dilatation3_ui64matrix_swp64_ilu3_elu2_red(uint64 **X, int i, int j0, int j1, uint64 **Y)
 // ------------------------------------------------------------------------------------------------
+{
+    uint64 a, b, c, d, x, y, ca1, ca2, cb1, cb2, cc1, cc2, res; 
+
+    int r = (j1 - j0 + 1)%3;
+    for (int j=j0; j<=j1-r-1;j+=3) {
+
+        a = load2(X, i-1, j-1);
+        b = load2(X, i, j-1);
+        c = load2(X, i+1, j-1);
+
+        d = load2(X, i+2, j-1);
+        
+        ca1 = ui64max3(a, b, c);
+        ca2 = ui64max3(b, c, d);
+
+        a = load2(X, i-1, j);
+        b = load2(X, i, j);
+        c = load2(X, i+1,j);
+
+        d = load2(X, i+2, j);
+
+        cb1 = ui64max3(a, b, c);
+        cb2 = ui64max3(b, c, d);
+        
+        a = load2(X, i-1, j+1);
+        b = load2(X, i, j+1);
+        c = load2(X, i+1, j+1);
+
+        d = load2(X, i+2, j+1);
+
+        cc1 = ui64max3(a, b, c);
+        cc2 = ui64max3(b, c, d);
+
+        x = ui64left1(cb1, ca1);
+        y = ui64right1(cb1, cc1);
+        
+        res = ui64max3(x, cb1, y);
+        store2(Y, i, j, res); 
+
+        x = ui64left1(cb2, ca2);
+        y = ui64right1(cb2, cc2);
+        
+        res = ui64max3(x, cb2, y);
+        store2(Y, i+1, j, res);
+
+        ca1 = cb1;
+        ca2 = cb2; 
+
+        cb1 = cc1;
+        cb2 = cc2;
+
+        a = load2(X, i-1, j+2);
+        b = load2(X, i, j+2);
+        c = load2(X, i+1, j+2);
+
+        d = load2(X, i+2, j+2);
+
+        cc1 = ui64max3(a, b, c);
+        cc2 = ui64max3(b, c, d);
+
+        x = ui64left1(cb1, ca1);
+        y = ui64right1(cb1, cc1);
+        
+        res = ui64max3(x, cb1, y);
+        store2(Y, i, j+1, res); 
+
+        x = ui64left1(cb2, ca2);
+        y = ui64right1(cb2, cc2);
+        
+        res = ui64max3(x, cb2, y);
+        store2(Y, i+1, j+1, res);
+
+        ca1 = cb1;
+        ca2 = cb2; 
+
+        cb1 = cc1;
+        cb2 = cc2;
+
+        a = load2(X, i-1, j+3);
+        b = load2(X, i, j+3);
+        c = load2(X, i+1, j+3);
+
+        d = load2(X, i+2, j+3);
+
+        cc1 = ui64max3(a, b, c);
+        cc2 = ui64max3(b, c, d);
+
+        x = ui64left1(cb1, ca1);
+        y = ui64right1(cb1, cc1);
+        
+        res = ui64max3(x, cb1, y);
+        store2(Y, i, j+2, res); 
+
+        x = ui64left1(cb2, ca2);
+        y = ui64right1(cb2, cc2);
+        
+        res = ui64max3(x, cb2, y);
+        store2(Y, i+1, j+2, res);
+
+        ca1 = cb1;
+        ca2 = cb2; 
+
+        cb1 = cc1;
+        cb2 = cc2;
+    }
+
+    if (r) {
+        for (int j=max(j0,j1-r); j <= j1; j++) {
+            a = load2(X, i-1, j-1);
+            b = load2(X, i, j-1);
+            c = load2(X, i+1, j-1); 
+
+            d = load2(X, i+2, j-1);
+
+            ca1 = ui64max3(a, b, c);
+            ca2 = ui64max3(b, c, d);
+
+            a = load2(X, i-1, j);
+            b = load2(X, i, j);
+            c = load2(X, i+1, j);
+
+            d = load2(X, i+2, j);
+            
+            cb1 = ui64max3(a, b, c);
+            cb2 = ui64max3(b, c, d);
+
+            a = load2(X, i-1, j+1);
+            b = load2(X, i, j+1);
+            c = load2(X, i+1, j+1);
+
+            d = load2(X, i+2, j+1);
+
+            cc1 = ui64max3(a, b, c);
+            cc2 = ui64max3(b, c, d);
+
+            x = ui64left1(cb1, ca1);
+            y = ui64right1(cb1, cc1);
+        
+            res = ui64max3(x, cb1, y);
+            store2(Y, i, j, res); 
+
+            x = ui64left1(cb2, ca2);
+            y = ui64right1(cb2, cc2);
+        
+            res = ui64max3(x, cb2, y);
+            store2(Y, i+1, j, res);
+        }
+    }
+}
+
+// -------------------------------------------------------------------------------------------------------
+void line_dilatation3_ui64matrix_swp64_ilu3_elu2_red_factor(uint64 **X, int i, int j0, int j1, uint64 **Y)
+// -------------------------------------------------------------------------------------------------------
 {
     uint64 a, b, c, d, x, y, ca1, ca2, cb1, cb2, cc1, cc2, res; 
 
@@ -617,13 +770,6 @@ void line_dilatation3_ui64matrix_swp64_ilu3_elu2_red(uint64 **X, int i, int j0, 
         }
     }
 }
-
-// -------------------------------------------------------------------------------------------------------
-void line_dilatation3_ui64matrix_swp64_ilu3_elu2_red_factor(uint64 **X, int i, int j0, int j1, uint64 **Y)
-// -------------------------------------------------------------------------------------------------------
-{
-    // TODO
-}
 // --------------------------------------------------------------------------------------------
 void dilatation3_ui64matrix_swp64_basic(uint64 **X, int i0, int i1, int j0, int j1, uint64 **Y)
 // --------------------------------------------------------------------------------------------
@@ -718,9 +864,9 @@ void dilatation3_ui64matrix_swp64_ilu3_elu2_red_factor(uint64 **X, int i0, int i
     int r = (i1 - i0 + 1) % 2;
     int i;
     for(i = i0; i<= i1-r; i+=2) {
-        line_dilatation3_ui64matrix_swp64_ilu3_elu2_red(X, i, j0, j1, Y);
+        line_dilatation3_ui64matrix_swp64_ilu3_elu2_red_factor(X, i, j0, j1, Y);
     } 
     if (r) {
-        line_dilatation3_ui64matrix_swp64_ilu3_elu2_red(X, i-1, j0, j1, Y);
+        line_dilatation3_ui64matrix_swp64_ilu3_elu2_red_factor(X, i-1, j0, j1, Y);
     }
 }

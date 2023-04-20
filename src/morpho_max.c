@@ -209,28 +209,28 @@ void line_max3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8 **Y)
 // ----------------------------------------------------------------------------------
 {
     uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y;
-    
-
-    x0 = load2(X, i-1, j0-1);
-    x1 = load2(X, i, j0-1);
-    x2 = load2(X, i+1, j0-1);
-
-    x3 = load2(X, i+2, j0-1);
-
-    ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8max3(x1, x2, x3);
-    
-
-    x0 = load2(X, i-1, j0);
-    x1 = load2(X, i, j0);
-    x2 = load2(X, i+1, j0);
-
-    x3 = load2(X, i+2, j0);
-
-    rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8max3(x1, x2, x3);
-    
+        
     for (int j = j0; j<= j1; j++) {
+
+        x0 = load2(X, i-1, j-1);
+        x1 = load2(X, i, j-1);
+        x2 = load2(X, i+1, j-1);
+
+        x3 = load2(X, i+2, j-1);
+
+        ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
+        ra1 = ui8max3(x1, x2, x3);
+        
+
+        x0 = load2(X, i-1, j);
+        x1 = load2(X, i, j);
+        x2 = load2(X, i+1, j);
+
+        x3 = load2(X, i+2, j);
+
+        rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
+        rb1 = ui8max3(x1, x2, x3);
+
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);
         x2 = load2(X, i+1, j+1);
@@ -310,27 +310,28 @@ void line_max3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, uint8 *
 
     uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y0, y1, y2;
 
-    x0 = load2(X, i-1, j0-1);
-    x1 = load2(X, i, j0-1);
-    x2 = load2(X, i+1, j0-1);
-
-    x3 = load2(X, i+2, j0-1);
-
-    ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8max3(x1, x2, x3);
-    
-
-    x0 = load2(X, i-1, j0);
-    x1 = load2(X, i, j0);
-    x2 = load2(X, i+1, j0);
-
-    x3 = load2(X, i+2, j0);
-
-    rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8max3(x1, x2, x3);
-
     int j;
     for (j = j0; j< j1-r-1; j+=3) {
+
+        x0 = load2(X, i-1, j-1);
+        x1 = load2(X, i, j-1);
+        x2 = load2(X, i+1, j-1);
+
+        x3 = load2(X, i+2, j-1);
+
+        ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
+        ra1 = ui8max3(x1, x2, x3);
+        
+
+        x0 = load2(X, i-1, j);
+        x1 = load2(X, i, j);
+        x2 = load2(X, i+1, j);
+
+        x3 = load2(X, i+2, j);
+
+        rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
+        rb1 = ui8max3(x1, x2, x3);
+
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);
         x2 = load2(X, i+1, j+1);
