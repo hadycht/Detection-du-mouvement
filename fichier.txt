@@ -1,0 +1,1077 @@
+
+=================================================================
+==19729==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 4128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59aa73 in bench_morpho_ouverture src/morpho_test.c:2174
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59ab2e in bench_morpho_ouverture src/morpho_test.c:2175
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4128 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59abe0 in bench_morpho_ouverture src/morpho_test.c:2178
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59ba9b in bench_morpho_ouverture src/morpho_test.c:2221
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c491 in bench_morpho_ouverture src/morpho_test.c:2271
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59ad69 in bench_morpho_ouverture src/morpho_test.c:2184
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b0e7 in bench_morpho_ouverture src/morpho_test.c:2190
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c367 in bench_morpho_ouverture src/morpho_test.c:2269
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c77a in bench_morpho_ouverture src/morpho_test.c:2276
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c5bb in bench_morpho_ouverture src/morpho_test.c:2273
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59adfe in bench_morpho_ouverture src/morpho_test.c:2185
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59af28 in bench_morpho_ouverture src/morpho_test.c:2187
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bb30 in bench_morpho_ouverture src/morpho_test.c:2222
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bd84 in bench_morpho_ouverture src/morpho_test.c:2226
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59ba06 in bench_morpho_ouverture src/morpho_test.c:2220
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bc5a in bench_morpho_ouverture src/morpho_test.c:2224
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c6e5 in bench_morpho_ouverture src/morpho_test.c:2275
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b052 in bench_morpho_ouverture src/morpho_test.c:2189
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bbc5 in bench_morpho_ouverture src/morpho_test.c:2223
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59acd4 in bench_morpho_ouverture src/morpho_test.c:2183
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59ae93 in bench_morpho_ouverture src/morpho_test.c:2186
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c3fc in bench_morpho_ouverture src/morpho_test.c:2270
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b971 in bench_morpho_ouverture src/morpho_test.c:2219
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59afbd in bench_morpho_ouverture src/morpho_test.c:2188
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c650 in bench_morpho_ouverture src/morpho_test.c:2274
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bcef in bench_morpho_ouverture src/morpho_test.c:2225
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c526 in bench_morpho_ouverture src/morpho_test.c:2272
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b286 in bench_morpho_ouverture src/morpho_test.c:2198
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b46b in bench_morpho_ouverture src/morpho_test.c:2204
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c97a in bench_morpho_ouverture src/morpho_test.c:2282
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b773 in bench_morpho_ouverture src/morpho_test.c:2213
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c0a7 in bench_morpho_ouverture src/morpho_test.c:2261
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b6b1 in bench_morpho_ouverture src/morpho_test.c:2210
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c169 in bench_morpho_ouverture src/morpho_test.c:2263
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b225 in bench_morpho_ouverture src/morpho_test.c:2197
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b835 in bench_morpho_ouverture src/morpho_test.c:2215
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b896 in bench_morpho_ouverture src/morpho_test.c:2216
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b348 in bench_morpho_ouverture src/morpho_test.c:2200
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bfe5 in bench_morpho_ouverture src/morpho_test.c:2233
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bf23 in bench_morpho_ouverture src/morpho_test.c:2231
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b52d in bench_morpho_ouverture src/morpho_test.c:2206
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bec2 in bench_morpho_ouverture src/morpho_test.c:2230
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59be61 in bench_morpho_ouverture src/morpho_test.c:2229
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59bf84 in bench_morpho_ouverture src/morpho_test.c:2232
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b58e in bench_morpho_ouverture src/morpho_test.c:2207
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59c046 in bench_morpho_ouverture src/morpho_test.c:2234
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b650 in bench_morpho_ouverture src/morpho_test.c:2209
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b1c4 in bench_morpho_ouverture src/morpho_test.c:2196
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c22b in bench_morpho_ouverture src/morpho_test.c:2265
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c1ca in bench_morpho_ouverture src/morpho_test.c:2264
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c7f6 in bench_morpho_ouverture src/morpho_test.c:2278
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59be00 in bench_morpho_ouverture src/morpho_test.c:2228
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b5ef in bench_morpho_ouverture src/morpho_test.c:2208
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c108 in bench_morpho_ouverture src/morpho_test.c:2262
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b4cc in bench_morpho_ouverture src/morpho_test.c:2205
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b7d4 in bench_morpho_ouverture src/morpho_test.c:2214
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b712 in bench_morpho_ouverture src/morpho_test.c:2212
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b40a in bench_morpho_ouverture src/morpho_test.c:2202
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c2ed in bench_morpho_ouverture src/morpho_test.c:2267
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c9db in bench_morpho_ouverture src/morpho_test.c:2283
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b3a9 in bench_morpho_ouverture src/morpho_test.c:2201
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59ca3c in bench_morpho_ouverture src/morpho_test.c:2284
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c28c in bench_morpho_ouverture src/morpho_test.c:2266
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b2e7 in bench_morpho_ouverture src/morpho_test.c:2199
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b8f7 in bench_morpho_ouverture src/morpho_test.c:2217
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a065e in ui8matrix src/nrutil.c:203
+    #2 0x55f21d59b163 in bench_morpho_ouverture src/morpho_test.c:2195
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Direct leak of 4096 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a160a in ui64matrix src/nrutil.c:353
+    #2 0x55f21d59c8b8 in bench_morpho_ouverture src/morpho_test.c:2280
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 266256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59aa73 in bench_morpho_ouverture src/morpho_test.c:2174
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 266256 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59ab2e in bench_morpho_ouverture src/morpho_test.c:2175
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b052 in bench_morpho_ouverture src/morpho_test.c:2189
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b0e7 in bench_morpho_ouverture src/morpho_test.c:2190
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59afbd in bench_morpho_ouverture src/morpho_test.c:2188
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59acd4 in bench_morpho_ouverture src/morpho_test.c:2183
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59ad69 in bench_morpho_ouverture src/morpho_test.c:2184
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59adfe in bench_morpho_ouverture src/morpho_test.c:2185
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59ae93 in bench_morpho_ouverture src/morpho_test.c:2186
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 264196 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59af28 in bench_morpho_ouverture src/morpho_test.c:2187
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b163 in bench_morpho_ouverture src/morpho_test.c:2195
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b225 in bench_morpho_ouverture src/morpho_test.c:2197
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b286 in bench_morpho_ouverture src/morpho_test.c:2198
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b2e7 in bench_morpho_ouverture src/morpho_test.c:2199
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b3a9 in bench_morpho_ouverture src/morpho_test.c:2201
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b40a in bench_morpho_ouverture src/morpho_test.c:2202
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b46b in bench_morpho_ouverture src/morpho_test.c:2204
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b4cc in bench_morpho_ouverture src/morpho_test.c:2205
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b52d in bench_morpho_ouverture src/morpho_test.c:2206
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b58e in bench_morpho_ouverture src/morpho_test.c:2207
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b5ef in bench_morpho_ouverture src/morpho_test.c:2208
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b6b1 in bench_morpho_ouverture src/morpho_test.c:2210
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b650 in bench_morpho_ouverture src/morpho_test.c:2209
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b348 in bench_morpho_ouverture src/morpho_test.c:2200
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 262144 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b1c4 in bench_morpho_ouverture src/morpho_test.c:2196
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41280 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59abe0 in bench_morpho_ouverture src/morpho_test.c:2178
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c77a in bench_morpho_ouverture src/morpho_test.c:2276
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c6e5 in bench_morpho_ouverture src/morpho_test.c:2275
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c5bb in bench_morpho_ouverture src/morpho_test.c:2273
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c526 in bench_morpho_ouverture src/morpho_test.c:2272
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c491 in bench_morpho_ouverture src/morpho_test.c:2271
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c3fc in bench_morpho_ouverture src/morpho_test.c:2270
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c367 in bench_morpho_ouverture src/morpho_test.c:2269
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 41120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c650 in bench_morpho_ouverture src/morpho_test.c:2274
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bd84 in bench_morpho_ouverture src/morpho_test.c:2226
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bcef in bench_morpho_ouverture src/morpho_test.c:2225
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bc5a in bench_morpho_ouverture src/morpho_test.c:2224
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bbc5 in bench_morpho_ouverture src/morpho_test.c:2223
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bb30 in bench_morpho_ouverture src/morpho_test.c:2222
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59ba9b in bench_morpho_ouverture src/morpho_test.c:2221
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59ba06 in bench_morpho_ouverture src/morpho_test.c:2220
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 33924 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b971 in bench_morpho_ouverture src/morpho_test.c:2219
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59ca3c in bench_morpho_ouverture src/morpho_test.c:2284
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c9db in bench_morpho_ouverture src/morpho_test.c:2283
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c97a in bench_morpho_ouverture src/morpho_test.c:2282
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c8b8 in bench_morpho_ouverture src/morpho_test.c:2280
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c7f6 in bench_morpho_ouverture src/morpho_test.c:2278
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c2ed in bench_morpho_ouverture src/morpho_test.c:2267
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c28c in bench_morpho_ouverture src/morpho_test.c:2266
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c22b in bench_morpho_ouverture src/morpho_test.c:2265
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c1ca in bench_morpho_ouverture src/morpho_test.c:2264
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c169 in bench_morpho_ouverture src/morpho_test.c:2263
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c108 in bench_morpho_ouverture src/morpho_test.c:2262
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a165c in ui64matrix src/nrutil.c:359
+    #2 0x55f21d59c0a7 in bench_morpho_ouverture src/morpho_test.c:2261
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59c046 in bench_morpho_ouverture src/morpho_test.c:2234
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bfe5 in bench_morpho_ouverture src/morpho_test.c:2233
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bf84 in bench_morpho_ouverture src/morpho_test.c:2232
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bf23 in bench_morpho_ouverture src/morpho_test.c:2231
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59bec2 in bench_morpho_ouverture src/morpho_test.c:2230
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59be61 in bench_morpho_ouverture src/morpho_test.c:2229
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59be00 in bench_morpho_ouverture src/morpho_test.c:2228
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b8f7 in bench_morpho_ouverture src/morpho_test.c:2217
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b896 in bench_morpho_ouverture src/morpho_test.c:2216
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b835 in bench_morpho_ouverture src/morpho_test.c:2215
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b7d4 in bench_morpho_ouverture src/morpho_test.c:2214
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b773 in bench_morpho_ouverture src/morpho_test.c:2213
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+Indirect leak of 32768 byte(s) in 1 object(s) allocated from:
+    #0 0x7f57ab0b4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55f21d5a06af in ui8matrix src/nrutil.c:209
+    #2 0x55f21d59b712 in bench_morpho_ouverture src/morpho_test.c:2212
+    #3 0x55f21d59fde4 in test_morpho src/morpho_test.c:2571
+    #4 0x55f21d58682e in main src/main.c:51
+    #5 0x7f57aac29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 8313984 byte(s) leaked in 134 allocation(s).
