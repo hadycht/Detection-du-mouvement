@@ -158,10 +158,10 @@ extern "C" {
 #define ui8min2(x0, x1) and2(x0, x1)
 #define ui8min3(x0, x1, x2) and3(x0, x1, x2)
 #define ui8min9(x0, x1, x2, x3, x4, x5, x6, x7, x8) and9(x0, x1, x2, x3, x4, x5, x6, x7, x8)
-#define ui32min2(x0, x1) andr2(x0, x1)
+#define ui32min2(x0, x1) and2(x0, x1)
 #define ui32min3(x0, x1, x2) and3(x0, x1, x2)
 #define ui32min9(x0, x1, x2, x3, x4, x5, x6, x7, x8) and9(x0, x1, x2, x3, x4, x5, x6, x7, x8)
-#define ui64min2(x0, x1) andr2(x0, x1)
+#define ui64min2(x0, x1) and2(x0, x1)
 #define ui64min3(x0, x1, x2) and3(x0, x1, x2)
 #define ui64min9(x0, x1, x2, x3, x4, x5, x6, x7, x8) and9(x0, x1, x2, x3, x4, x5, x6, x7, x8)
 

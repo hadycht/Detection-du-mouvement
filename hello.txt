@@ -1,0 +1,57 @@
+=================================================================
+==32101==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x61100000003f at pc 0x55ac7bfa2460 bp 0x7ffdd1d8c620 sp 0x7ffdd1d8c610
+READ of size 1 at 0x61100000003f thread T0
+    #0 0x55ac7bfa245f in line_ouverture3_ui8matrix_swp8_fusion_basic src/morpho_ouverture_swp8.c:48
+    #1 0x55ac7bfa7518 in ouverture3_ui8matrix_swp8_fusion_basic src/morpho_ouverture_swp8.c:489
+    #2 0x55ac7bf4e19b in test_morpho_ouverture_routine_SWP8 src/morpho_test.c:966
+    #3 0x55ac7bf55737 in test_morpho_ouverture src/morpho_test.c:2079
+    #4 0x55ac7bf5aa1f in test_morpho src/morpho_test.c:2578
+    #5 0x55ac7bf41826 in main src/main.c:51
+    #6 0x7fc0eba29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x7fc0eba29e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #8 0x55ac7bf415c4 in _start (/home/hady/Bureau/L3/S6/Projet Vision/Projet-Vision/exe/motion_acc.exe+0x85c4)
+
+0x61100000003f is located 1 bytes to the left of 216-byte region [0x611000000040,0x611000000118)
+allocated by thread T0 here:
+    #0 0x7fc0ebeb4867 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55ac7bf5b2e9 in ui8matrix src/nrutil.c:209
+    #2 0x55ac7bf4b7c9 in test_morpho_ouverture_routine_SWP8 src/morpho_test.c:634
+    #3 0x55ac7bf55737 in test_morpho_ouverture src/morpho_test.c:2079
+    #4 0x55ac7bf5aa1f in test_morpho src/morpho_test.c:2578
+    #5 0x55ac7bf41826 in main src/main.c:51
+    #6 0x7fc0eba29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/morpho_ouverture_swp8.c:48 in line_ouverture3_ui8matrix_swp8_fusion_basic
+Shadow bytes around the buggy address:
+  0x0c227fff7fb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c227fff8000: fa fa fa fa fa fa fa[fa]00 00 00 00 00 00 00 00
+  0x0c227fff8010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff8020: 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff8030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff8040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff8050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==32101==ABORTING
