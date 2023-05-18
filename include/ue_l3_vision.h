@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-#define BINOME "ELHADI"
+#define BINOME "CHITER ELHADI - ZENINE MEHDI"
 // nom du binome (ou du monome)
 // servira pour l'affichage des resultats et le calcul de la note
 

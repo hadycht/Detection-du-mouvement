@@ -2212,13 +2212,14 @@ void ouverture3_ui8matrix_pipeline_elu2_red(uint8 **X, int i0, int i1, int j0, i
     //PROLOGUE
     line_erosion3_ui8matrix_elu2_red(X, i0, j0, j1, T);
     
-    for(int i=i0; i<=i1-r; i+=2) {
+    for(int i=i0; i<i1-r-1; i+=2) {
         line_erosion3_ui8matrix_elu2_red(X, i+1, j0, j1, T);
         line_dilatation3_ui8matrix_elu2_red(T, i, j0, j1, Y);
     }
-
+    line_erosion3_ui8matrix_elu2_red(X, i1-r-1, j0, j1, T);
+    line_dilatation3_ui8matrix_elu2_red(T, i1-r-1, j0, j1, Y);
     if (r) {
-        line_erosion3_ui8matrix_elu2_red(X, i1, j0, j1, T);
+        line_erosion3_ui8matrix_elu2_red(X, i1-1, j0, j1, T);
         line_dilatation3_ui8matrix_elu2_red(T, i1-1, j0, j1, Y);
     }
 }
@@ -2230,13 +2231,14 @@ void ouverture3_ui8matrix_pipeline_elu2_red_factor(uint8 **X, int i0, int i1, in
     //PROLOGUE
     line_erosion3_ui8matrix_elu2_red_factor(X, i0, j0, j1, T);
     
-    for(int i=i0; i<i1-r; i+=2) {
+    for(int i=i0; i<i1-r-1; i+=2) {
         line_erosion3_ui8matrix_elu2_red_factor(X, i+1, j0, j1, T);
         line_dilatation3_ui8matrix_elu2_red_factor(T, i, j0, j1, Y);
     }
-
+    line_erosion3_ui8matrix_elu2_red_factor(X, i1-r-1, j0, j1, T);
+    line_dilatation3_ui8matrix_elu2_red_factor(T, i1-r-1, j0, j1, Y);
     if (r) {
-        line_erosion3_ui8matrix_elu2_red_factor(X, i1, j0, j1, T);
+        line_erosion3_ui8matrix_elu2_red_factor(X, i1-1, j0, j1, T);
         line_dilatation3_ui8matrix_elu2_red_factor(T, i1-1, j0, j1, Y);
     }
 }
@@ -2251,7 +2253,6 @@ void ouverture3_ui8matrix_pipeline_ilu3_elu2_red(uint8 **X, int i0, int i1, int 
         line_erosion3_ui8matrix_ilu3_elu2_red(X, i+1, j0, j1, T);
         line_dilatation3_ui8matrix_ilu3_elu2_red(T, i, j0, j1, Y);
     }
-   
     if (r) {
         line_erosion3_ui8matrix_ilu3_elu2_red(X, i1, j0, j1, T);
         line_dilatation3_ui8matrix_ilu3_elu2_red(T, i1-1, j0, j1, Y);

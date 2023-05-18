@@ -26,9 +26,9 @@ void line_dilatation3_ui8matrix_basic(uint8 **X, int i, int j0, int j1, uint8 **
 // -------------------------------------------------------------------------------
 {
     for(int j=j0; j<=j1; j++) {
-        store2(Y, i, j, ui8max9(X[i-1][j-1], X[i-1][j], X[i-1][j+1],
-                       X[i  ][j-1], X[i  ][j], X[i  ][j+1],
-                       X[i+1][j-1], X[i+1][j], X[i+1][j+1]));
+        store2(Y, i, j, ui8max9(load2(X,i-1,j-1), load2(X,i-1,j), load2(X,i-1,j+1),
+                                load2(X,i  ,j-1), load2(X,i  ,j), load2(X,i  ,j+1),
+                                load2(X,i+1,j-1), load2(X,i+1,j), load2(X,i+1,j+1)));
     }
 }
 // -----------------------------------------------------------------------------
@@ -37,9 +37,9 @@ void line_dilatation3_ui8matrix_reg(uint8 **X, int i, int j0, int j1, uint8 **Y)
 {
     for (int j=j0; j<=j1; j++) {
 
-        uint8 x0 = ui8max3(X[i-1][j-1], X[i-1][j], X[i-1][j+1]);
-        uint8 x1 = ui8max3(X[i][j-1], X[i][j], X[i][j+1]);
-        uint8 x2 = ui8max3(X[i+1][j-1], X[i+1][j], X[i+1][j+1]);
+        uint8 x0 = ui8max3(load2(X,i-1,j-1), load2(X,i-1,j), load2(X,i-1,j+1));
+        uint8 x1 = ui8max3(load2(X,i,j-1), load2(X,i,j), load2(X,i,j+1));
+        uint8 x2 = ui8max3(load2(X,i+1,j-1), load2(X,i+1,j), load2(X,i+1,j+1));
 
         store2(Y, i, j, ui8max3(x0, x1, x2));
 
@@ -49,6 +49,8 @@ void line_dilatation3_ui8matrix_reg(uint8 **X, int i, int j0, int j1, uint8 **Y)
 void line_dilatation3_ui8matrix_rot(uint8 **X, int i, int j0, int j1, uint8 **Y)
 // -----------------------------------------------------------------------------
 {
+    // on lit les valeurs par colonne
+
     uint8 x0 = load2(X, i-1, j0-1);
     uint8 x1 = load2(X, i, j0-1);
     uint8 x2 = load2(X, i+1, j0-1);
@@ -65,6 +67,8 @@ void line_dilatation3_ui8matrix_rot(uint8 **X, int i, int j0, int j1, uint8 **Y)
         uint8 x8 = load2(X, i+1, j);
         
         store2(Y, i, j-1, ui8max9(x0,x1,x2,x3,x4,x5,x6,x7,x8));
+
+        // la on fait la rotation des registres
 
         x0 = x3;
         x1 = x4;
@@ -104,6 +108,7 @@ void line_dilatation3_ui8matrix_red(uint8 **X, int i, int j0, int j1, uint8 **Y)
         y = ui8max3(ra, rb, rc);
         store2(Y,i,j, y);
 
+        // rotation des colonnes
         ra = rb;
         rb = rc;
 
@@ -119,23 +124,23 @@ void line_dilatation3_ui8matrix_ilu3(uint8 **X, int i, int j0, int j1, uint8 **Y
     for (j = j0; j< j1-r-1; j+=3) {
 
         store2(Y, i, j, ui8max9(load2(X, i-1, j-1), load2(X,i-1, j), load2(X, i-1, j+1),
-                       load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
-                       load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
+                                load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
+                                load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
 
         store2(Y, i, j+1, ui8max9(load2(X, i-1, j), load2(X,i-1, j+1), load2(X, i-1, j+2),
-                       load2(X, i  , j), load2(X, i , j+1), load2(X, i  , j+2),
-                       load2(X, i+1, j), load2(X, i+1,j+1), load2(X, i+1,j+2)));
+                                  load2(X, i  , j), load2(X, i , j+1), load2(X, i  , j+2),
+                                  load2(X, i+1, j), load2(X, i+1,j+1), load2(X, i+1,j+2)));
 
         store2(Y, i, j+2, ui8max9(load2(X, i-1, j+1), load2(X,i-1, j+2), load2(X, i-1, j+3),
-                       load2(X, i  , j+1), load2(X, i , j+2), load2(X, i  , j+3),
-                       load2(X, i+1, j+1), load2(X, i+1,j+2), load2(X, i+1,j+3)));
+                                  load2(X, i  , j+1), load2(X, i , j+2), load2(X, i  , j+3),
+                                  load2(X, i+1, j+1), load2(X, i+1,j+2), load2(X, i+1,j+3)));
     
     }
     if (r) {
         for (int j=j1-r-1; j <= j1; j++) {
             store2(Y, i, j, ui8max9(load2(X, i-1, j-1), load2(X,i-1, j), load2(X, i-1, j+1),
-                        load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
-                        load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
+                                    load2(X, i  , j-1), load2(X, i , j), load2(X, i  , j+1),
+                                    load2(X, i+1, j-1), load2(X, i+1,j), load2(X, i+1,j+1)));
         
         }
     }
@@ -171,6 +176,7 @@ void line_dilatation3_ui8matrix_ilu3_red(uint8 **X, int i, int j0, int j1, uint8
         y0 = ui8max3(ra, rb, rc);
         store2(Y,i,j, y0);
 
+        // rotation des colonnes
         ra = rb;
         rb = rc; 
 
@@ -199,13 +205,14 @@ void line_dilatation3_ui8matrix_ilu3_red(uint8 **X, int i, int j0, int j1, uint8
         rb = rc;
 
     }
-
-    for (int k = 0; k < r; k++) {
-        store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X,i-1, j+k), load2(X, i-1, j+k+1),
-                       load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
-                       load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1,j+k+1)));
-    
-    } 
+    if (r) {
+        for (int k = 0; k < r; k++) {
+            store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X,i-1, j+k), load2(X, i-1, j+k+1),
+                        load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
+                        load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1,j+k+1)));
+        
+        } 
+    }
 }
 // ----------------------------------------------------------------------------------
 void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8 **Y)
@@ -221,7 +228,7 @@ void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8
         x3 = load2(X, i+2, j-1);
 
         ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-        ra1 = ui8max3(x1, x2, x3);
+        ra1 = ui8max3(x1, x2, x3); //reduction de la premiere colonne bis
         
 
         x0 = load2(X, i-1, j);
@@ -231,7 +238,7 @@ void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8
         x3 = load2(X, i+2, j);
 
         rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-        rb1 = ui8max3(x1, x2, x3);
+        rb1 = ui8max3(x1, x2, x3); //reduction de la deuxieme colonne bis
 
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);
@@ -240,7 +247,7 @@ void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8
         x3 = load2(X, i+2, j+1);
 
         rc = ui8max3(x0,x1,x2); //reduction de la troisième colonne
-        rc1 = ui8max3(x1, x2, x3);
+        rc1 = ui8max3(x1, x2, x3); //reduction de la troisieme colonne bis
 
         y = ui8max3(ra, rb, rc); 
         store2(Y,i,j, y);
@@ -248,9 +255,10 @@ void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8
         y = ui8max3(ra1, rb1, rc1);
         store2(Y,i+1,j, y);
 
+        //rotation des colonnes
         ra = rb;
         rb = rc; 
-        
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
     }
@@ -259,17 +267,17 @@ void line_dilatation3_ui8matrix_elu2_red(uint8 **X, int i, int j0, int j1, uint8
 void line_dilatation3_ui8matrix_elu2_red_factor(uint8 **X, int i, int j0, int j1, uint8 **Y)
 // -----------------------------------------------------------------------------------------
 {
-    uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y;
+    uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y, tmp;
     
-
     x0 = load2(X, i-1, j0-1);
     x1 = load2(X, i, j0-1);
     x2 = load2(X, i+1, j0-1);
 
     x3 = load2(X, i+2, j0-1);
 
-    ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8max3(x1, x2, x3);
+    tmp = ui8max2(x1, x2); //on factorise le calcul de x1 et x2
+    ra = ui8max2(x0,tmp); //reduction de la premiere colonne
+    ra1 = ui8max2(tmp, x3); //reduction de la premiere colonne bis
     
 
     x0 = load2(X, i-1, j0);
@@ -278,8 +286,9 @@ void line_dilatation3_ui8matrix_elu2_red_factor(uint8 **X, int i, int j0, int j1
 
     x3 = load2(X, i+2, j0);
 
-    rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8max3(x1, x2, x3);
+    tmp = ui8max2(x1, x2); //on factorise le calcul de x1 et x2
+    rb = ui8max2(x0,tmp); //reduction de la deuxieme colonne
+    rb1 = ui8max2(tmp, x3); //reduction de la deuxieme colonne bis
     
     for (int j = j0; j<= j1; j++) {
         x0 = load2(X, i-1, j+1);
@@ -288,8 +297,9 @@ void line_dilatation3_ui8matrix_elu2_red_factor(uint8 **X, int i, int j0, int j1
 
         x3 = load2(X, i+2, j+1);
 
-        rc = ui8max3(x0,x1,x2); //reduction de la troisième colonne
-        rc1 = ui8max3(x1, x2, x3);
+        tmp = ui8max2(x1, x2); //on factorise le calcul de x1 et x2
+        rc = ui8max2(x0,tmp); //reduction de la troisième colonne
+        rc1 = ui8max2(tmp, x3); //reduction de la troisième colonne bis
 
         y = ui8max3(ra, rb, rc); 
         store2(Y,i,j, y);
@@ -297,9 +307,10 @@ void line_dilatation3_ui8matrix_elu2_red_factor(uint8 **X, int i, int j0, int j1
         y = ui8max3(ra1, rb1, rc1);
         store2(Y,i+1,j, y);
 
+        //rotation des colonnes
         ra = rb;
         rb = rc; 
-        
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
     }
@@ -322,7 +333,7 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         x3 = load2(X, i+2, j-1);
 
         ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-        ra1 = ui8max3(x1, x2, x3);
+        ra1 = ui8max3(x1, x2, x3); //reduction de la premiere colonne bis
         
 
         x0 = load2(X, i-1, j);
@@ -332,7 +343,7 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         x3 = load2(X, i+2, j);
 
         rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-        rb1 = ui8max3(x1, x2, x3);
+        rb1 = ui8max3(x1, x2, x3); //reduction de la deuxieme colonne bis
 
         x0 = load2(X, i-1, j+1);
         x1 = load2(X, i, j+1);
@@ -341,7 +352,7 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         x3 = load2(X, i+2, j+1);
 
         rc = ui8max3(x0,x1,x2); //reduction de la troisième colonne
-        rc1 = ui8max3(x1, x2, x3);
+        rc1 = ui8max3(x1, x2, x3); //reduction de la troisième colonne bis
 
         y0 = ui8max3(ra, rb, rc);
         store2(Y, i, j, y0);
@@ -349,9 +360,10 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         y0 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j, y0);
 
+        //rotation des colonnes 
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
@@ -362,7 +374,7 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         x3 = load2(X, i+2, j+2);
 
 
-        rc = ui8max3(x0, x1, x2);
+        rc = ui8max3(x0, x1, x2); 
         rc1 = ui8max3(x1, x2, x3);
 
         y1 = ui8max3(ra, rb, rc);
@@ -371,9 +383,10 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         y1 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j+1, y1);
 
+        //rotation des colonnes 
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
@@ -393,22 +406,25 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red(uint8 **X, int i, int j0, int j1, 
         y2 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j+2, y2);
 
+        //rotation des colonnes 
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
     }
-    for (int k = 0; k < r; k++) {
-        store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X, i-1,j+k), load2(X, i-1, j+k+1),
-                                  load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
-                                  load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1, j+k+1)));
+    if (r) {
+        for (int k = 0; k < r; k++) {
+            store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X, i-1,j+k), load2(X, i-1, j+k+1),
+                                      load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
+                                      load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1, j+k+1)));
 
-        store2(Y, i+1, j+k, ui8max9(load2(X, i, j+k-1), load2(X, i,j+k), load2(X, i, j+k+1),
-                                  load2(X, i+1  , j+k-1), load2(X, i+1 , j+k), load2(X, i+1  , j+k+1),
-                                  load2(X, i+2, j+k-1), load2(X, i+2,j+k), load2(X, i+2, j+k+1)));
-    
+            store2(Y, i+1, j+k, ui8max9(load2(X, i, j+k-1), load2(X, i,j+k), load2(X, i, j+k+1),
+                                        load2(X, i+1  , j+k-1), load2(X, i+1 , j+k), load2(X, i+1  , j+k+1),
+                                        load2(X, i+2, j+k-1), load2(X, i+2,j+k), load2(X, i+2, j+k+1)));
+        
+        }
     }
 }
 // ----------------------------------------------------------------------------------------------
@@ -417,7 +433,7 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 {
     int r = (j1 - j0 + 1) % 3;
 
-    uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y0, y1, y2;
+    uint8 x0, x1, x2, x3, ra, ra1, rb, rb1, rc, rc1, y0, y1, y2, tmp;
 
     x0 = load2(X, i-1, j0-1);
     x1 = load2(X, i, j0-1);
@@ -425,8 +441,9 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 
     x3 = load2(X, i+2, j0-1);
 
-    ra = ui8max3(x0,x1,x2); //reduction de la premiere colonne
-    ra1 = ui8max3(x1, x2, x3);
+    tmp = ui8max2(x1, x2); //on factorise le calcul x1 et x2
+    ra = ui8max2(x0,tmp); //reduction de la premiere colonne
+    ra1 = ui8max2(tmp, x3); //reduction de la premiere colonne bis
     
 
     x0 = load2(X, i-1, j0);
@@ -435,8 +452,9 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 
     x3 = load2(X, i+2, j0);
 
-    rb = ui8max3(x0,x1,x2); //reduction de la deuxieme colonne
-    rb1 = ui8max3(x1, x2, x3);
+    tmp = ui8max2(x1, x2); //on factorise le calcul x1 et x2
+    rb = ui8max2(x0,tmp); //reduction de la deuxieme colonne
+    rb1 = ui8max2(tmp, x3); //reduction de la deuxieme colonne bis
 
     int j;
     for (j = j0; j< j1-r-1; j+=3) {
@@ -446,8 +464,9 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 
         x3 = load2(X, i+2, j+1);
 
-        rc = ui8max3(x0,x1,x2); //reduction de la troisième colonne
-        rc1 = ui8max3(x1, x2, x3);
+        tmp = ui8max2(x1, x2); //on factorise le calcul x1 et x2
+        rc = ui8max2(x0,tmp); //reduction de la troisième colonne
+        rc1 = ui8max2(tmp, x3); //reduction de la troisieme colonne bis
 
         y0 = ui8max3(ra, rb, rc);
         store2(Y, i, j, y0);
@@ -455,9 +474,10 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
         y0 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j, y0);
 
+        //rotation des colonnes
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
@@ -467,19 +487,19 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 
         x3 = load2(X, i+2, j+2);
 
-
-        rc = ui8max3(x0, x1, x2);
-        rc1 = ui8max3(x1, x2, x3);
+        tmp = ui8max2(x1, x2);
+        rc = ui8max2(x0, tmp);
+        rc1 = ui8max2(tmp, x3);
 
         y1 = ui8max3(ra, rb, rc);
         store2(Y, i, j+1, y1);
 
         y1 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j+1, y1);
-
+        //rotation des colonnes
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
@@ -489,32 +509,35 @@ void line_dilatation3_ui8matrix_ilu3_elu2_red_factor(uint8 **X, int i, int j0, i
 
         x3 = load2(X, i+2, j+3);
 
-
-        rc = ui8max3(x0, x1, x2);
-        rc1 = ui8max3(x1, x2, x3);
+        tmp = ui8max2(x1, x2);
+        rc = ui8max2(x0, tmp);
+        rc1 = ui8max2(tmp, x3);
 
         y2 = ui8max3(ra, rb, rc);
         store2(Y, i, j+2, y2);
 
         y2 = ui8max3(ra1, rb1, rc1);
         store2(Y, i+1, j+2, y2);
-
+        //rotation des colonnes
         ra = rb;
         rb = rc; 
-
+        //rotation des colonnes bis
         ra1 = rb1;
         rb1 = rc1;
 
     }
-    for (int k = 0; k < r; k++) {
-        store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X, i-1,j+k), load2(X, i-1, j+k+1),
-                                  load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
-                                  load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1, j+k+1)));
+    if (r) {
 
-        store2(Y, i+1, j+k, ui8max9(load2(X, i, j+k-1), load2(X, i,j+k), load2(X, i, j+k+1),
-                                  load2(X, i+1  , j+k-1), load2(X, i+1 , j+k), load2(X, i+1  , j+k+1),
-                                  load2(X, i+2, j+k-1), load2(X, i+2,j+k), load2(X, i+2, j+k+1)));
-    
+        for (int k = 0; k < r; k++) {
+            store2(Y, i, j+k, ui8max9(load2(X, i-1, j+k-1), load2(X, i-1,j+k), load2(X, i-1, j+k+1),
+                                    load2(X, i  , j+k-1), load2(X, i , j+k), load2(X, i  , j+k+1),
+                                    load2(X, i+1, j+k-1), load2(X, i+1,j+k), load2(X, i+1, j+k+1)));
+
+            store2(Y, i+1, j+k, ui8max9(load2(X, i, j+k-1), load2(X, i,j+k), load2(X, i, j+k+1),
+                                    load2(X, i+1  , j+k-1), load2(X, i+1 , j+k), load2(X, i+1  , j+k+1),
+                                    load2(X, i+2, j+k-1), load2(X, i+2,j+k), load2(X, i+2, j+k+1)));
+        
+        }
     }
 }
 

@@ -28,14 +28,17 @@ void line_erosion3_ui8matrix_swp8_basic(uint8 **X, int i, int j0, int j1, uint8 
     
     for (int j=j0; j<=j1; j++) {
         
-        uint8 a1 = load2(X, i-1, j-1);
-        uint8 a2 = load2(X, i-1, j);
-        uint8 a3 = load2(X, i-1, j+1);
+        // colonnes du nord
+        uint8 a1 = load2(X, i-1, j-1); //Gauche
+        uint8 a2 = load2(X, i-1, j);   //Milieu
+        uint8 a3 = load2(X, i-1, j+1); //Droite
 
+        //colonnes du milieu 
         uint8 b1 = load2(X, i, j-1);
         uint8 b2 = load2(X, i, j);
         uint8 b3 = load2(X, i, j+1);
 
+        //colonnes du sud
         uint8 c1 = load2(X, i+1, j-1);
         uint8 c2 = load2(X, i+1, j);
         uint8 c3 = load2(X, i+1, j+1);

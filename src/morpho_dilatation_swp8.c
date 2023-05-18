@@ -26,15 +26,18 @@ void line_dilatation3_ui8matrix_swp8_basic(uint8 **X, int i, int j0, int j1, uin
 // ------------------------------------------------------------------------------------
 {
     for (int j=j0; j<=j1; j++) {
+        
+        //valeurs de la ligne nord
+        uint8 a1 = load2(X, i-1, j-1); //Gauche
+        uint8 a2 = load2(X, i-1, j); //milieu
+        uint8 a3 = load2(X, i-1, j+1); //droite
 
-        uint8 a1 = load2(X, i-1, j-1);
-        uint8 a2 = load2(X, i-1, j);
-        uint8 a3 = load2(X, i-1, j+1);
-
+        //valeurs de la ligne au milieu
         uint8 b1 = load2(X, i, j-1);
         uint8 b2 = load2(X, i, j);
-        uint8 b3 = load2(X, i, j+1);
+        uint8 b3 = load2(X, i, j+1);    
 
+        //valeurs de la ligne sud
         uint8 c1 = load2(X, i+1, j-1);
         uint8 c2 = load2(X, i+1, j);
         uint8 c3 = load2(X, i+1, j+1);
@@ -80,16 +83,20 @@ void line_dilatation3_ui8matrix_swp8_rot(uint8 **X, int i, int j0, int j1, uint8
 // ----------------------------------------------------------------------------------
 {
     uint8 a1, a2, a3, b1, b2, b3, c1, c2, c3, x1, x2, y1, y2, z1, z2; 
+
+    // les valeurs de la première colonne
     a1 = load2(X, i-1, j0-1);
     b1 = load2(X, i, j0-1);
     c1 = load2(X, i+1, j0-1);
     
+    // les valeurs de la deuxième colonne
     a2 = load2(X, i-1, j0);
     b2 = load2(X, i, j0);
     c2 = load2(X, i+1,j0); 
 
     for (int j=j0+1; j<=j1+1; j++) {
 
+        // les valeurs de la troisième colonne
         a3 = load2(X, i-1, j);
         b3 = load2(X, i, j);
         c3 = load2(X, i+1, j);

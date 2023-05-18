@@ -2183,11 +2183,11 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
     // X 2r-border
     uint8  **X      = ui8matrix (0 - 2*r, h-1 + 2*r, 0 - 2*r, w1 -1 + 2*r); zero_ui8matrix (X  , 0 - 2*r, h-1 + 2*r, 0 - 2*r, w1 -1 + 2*r);
     uint8  **X1     = ui8matrix (0 - 2*r, h-1 + 2*r, 0 - 2*r, w1 -1 + 2*r); zero_ui8matrix (X1 , 0 - 2*r, h-1 + 2*r, 0 - 2*r, w1 -1 + 2*r);
-    //uint8  **X8     = ui8matrix (0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r); zero_ui8matrix (X8 , 0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r);
+    uint8  **X8     = ui8matrix (0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r); zero_ui8matrix (X8 , 0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r);
     //uint32 **X32    = ui32matrix(0 - 2*r, h-1 + 2*r, 0 - 1*r, w32-1 + 1*r); zero_ui32matrix(X32, 0 - 2*r, h-1 + 2*r, 0 - 1*r, w32-1 + 1*r);
     uint64 **X64    = ui64matrix(0 - 2*r, h-1 + 2*r, 0 - 1*r, w64-1 + 1*r); zero_ui64matrix(X64, 0 - 2*r, h-1 + 2*r, 0 - 1*r, w64-1 + 1*r);
         
-    //zero_ui8matrix (X8,  0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r);
+    zero_ui8matrix (X8,  0 - 2*r, h-1 + 2*r, 0 - 1*r, w8 -1 + 1*r);
     zero_ui64matrix (X64,  0 - 2*r, h-1 + 2*r, 0 - 1*r, w64 - 1 + 1*r);
     // T 1r-border
     uint8 **T_basic                         = ui8matrix(0 - r, h-1 + r, 0 - r, w1-1 + r); zero_ui8matrix(T_basic                        , 0 - r, h-1 + r, 0 - r, w1-1 + r);
@@ -2428,17 +2428,17 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
         BENCH(ouverture3_ui8matrix_pipeline_ilu3_elu2_red       (X, 0, h-1, 0, w1-1, T_pipeline_ilu3_elu2_red       , Y_pipeline_ilu3_elu2_red       ), n, cpp_pipeline_ilu3_elu2_red       );
         BENCH(ouverture3_ui8matrix_pipeline_ilu3_elu2_red_factor(X, 0, h-1, 0, w1-1, T_pipeline_ilu3_elu2_red_factor, Y_pipeline_ilu3_elu2_red_factor), n, cpp_pipeline_ilu3_elu2_red_factor);
         
-        //BENCH(ouverture3_ui8matrix_swp8_basic                      (X8, 0, h-1, 0, w8-1, T8_basic, Y8_basic                      ), n, cpp_basic8                      );
-        //BENCH(ouverture3_ui8matrix_swp8_fusion_basic               (X8, 0, h-1, 0, w8-1,           Y8_fusion_basic               ), n, cpp_fusion8                     );
-        //BENCH(ouverture3_ui8matrix_swp8_fusion_red                 (X8, 0, h-1, 0, w8-1,           Y8_fusion_red                 ), n, cpp_fusion8_red                 );
-        //BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_red            (X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_red            ), n, cpp_fusion8_ilu3_red            );
-        //BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_elu2_red       (X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_elu2_red       ), n, cpp_fusion8_ilu3_elu2_red       );
-        //BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_elu2_red_factor(X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_elu2_red_factor), n, cpp_fusion8_ilu3_elu2_red_factor);
+        BENCH(ouverture3_ui8matrix_swp8_basic                      (X8, 0, h-1, 0, w8-1, T8_basic, Y8_basic                      ), n, cpp_basic8                      );
+        BENCH(ouverture3_ui8matrix_swp8_fusion_basic               (X8, 0, h-1, 0, w8-1,           Y8_fusion_basic               ), n, cpp_fusion8_basic                     );
+        BENCH(ouverture3_ui8matrix_swp8_fusion_red                 (X8, 0, h-1, 0, w8-1,           Y8_fusion_red                 ), n, cpp_fusion8_red                 );
+        BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_red            (X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_red            ), n, cpp_fusion8_ilu3_red            );
+        BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_elu2_red       (X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_elu2_red       ), n, cpp_fusion8_ilu3_elu2_red       );
+        BENCH(ouverture3_ui8matrix_swp8_fusion_ilu3_elu2_red_factor(X8, 0, h-1, 0, w8-1,           Y8_fusion_ilu3_elu2_red_factor), n, cpp_fusion8_ilu3_elu2_red_factor);
         
-        //BENCH(ouverture3_ui8matrix_swp8_pipeline_basic               (X8, 0, h-1, 0, w8-1, T8_pipeline                     , Y8_pipeline                     ), n, cpp_pipeline8_basic               );
-        //BENCH(ouverture3_ui8matrix_swp8_pipeline_ilu3_red            (X8, 0, h-1, 0, w8-1, T8_pipeline_ilu3_red            , Y8_pipeline_ilu3_red            ), n, cpp_pipeline8_ilu3_red            );
-        //BENCH(ouverture3_ui8matrix_swp8_pipeline_elu2_red_factor     (X8, 0, h-1, 0, w8-1, T8_pipeline_elu2_red_factor     , Y8_pipeline_elu2_red_factor     ), n, cpp_pipeline8_elu2_red_factor     );
-        //BENCH(ouverture3_ui8matrix_swp8_pipeline_ilu3_elu2_red_factor(X8, 0, h-1, 0, w8-1, T8_pipeline_ilu3_elu2_red_factor, Y8_pipeline_ilu3_elu2_red_factor), n, cpp_pipeline8_ilu3_elu2_red_factor);
+        BENCH(ouverture3_ui8matrix_swp8_pipeline_basic               (X8, 0, h-1, 0, w8-1, T8_pipeline_basic               , Y8_pipeline_basic               ), n, cpp_pipeline8_basic               );
+        BENCH(ouverture3_ui8matrix_swp8_pipeline_ilu3_red            (X8, 0, h-1, 0, w8-1, T8_pipeline_ilu3_red            , Y8_pipeline_ilu3_red            ), n, cpp_pipeline8_ilu3_red            );
+        BENCH(ouverture3_ui8matrix_swp8_pipeline_elu2_red_factor     (X8, 0, h-1, 0, w8-1, T8_pipeline_elu2_red_factor     , Y8_pipeline_elu2_red_factor     ), n, cpp_pipeline8_elu2_red_factor     );
+        BENCH(ouverture3_ui8matrix_swp8_pipeline_ilu3_elu2_red_factor(X8, 0, h-1, 0, w8-1, T8_pipeline_ilu3_elu2_red_factor, Y8_pipeline_ilu3_elu2_red_factor), n, cpp_pipeline8_ilu3_elu2_red_factor);
         
         //BENCH(ouverture3_ui32matrix_swp32_basic                      (X32, 0, h-1, 0, w32-1, T32_basic, Y32_basic                      ), n, cpp_basic32                      );
         //BENCH(ouverture3_ui32matrix_swp32_fusion_basic               (X32, 0, h-1, 0, w32-1,            Y32_fusion_basic               ), n, cpp_fusion32                     );
@@ -2497,19 +2497,20 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
         printf(format, cpp_pipeline_ilu3_elu2_red       );
         printf(format, cpp_pipeline_ilu3_elu2_red_factor);
         
-        //printf("   ");
-        //printf(format, cpp_basic8                      );
-        //printf(format, cpp_fusion8printf("   ");        );
-        //printf(format, cpp_fusion8_red                 );
-        //printf(format, cpp_fusion8_ilu3_red            );
-        //printf(format, cpp_fusion8_ilu3_elu2_red       );
-        //printf(format, cpp_fusion8_ilu3_elu2_red_factor);
+        printf("   ");
+        printf(format, cpp_basic8                      );
+        printf("   ");
+        printf(format, cpp_fusion8_basic);
+        printf(format, cpp_fusion8_red                 );
+        printf(format, cpp_fusion8_ilu3_red            );
+        printf(format, cpp_fusion8_ilu3_elu2_red       );
+        printf(format, cpp_fusion8_ilu3_elu2_red_factor);
         
-        //printf("   ");
-        //printf(format, cpp_pipeline8_basic               );
-        //printf(format, cpp_pipeline8_ilu3_red            );
-        //printf(format, cpp_pipeline8_elu2_red_factor     );
-        //printf(format, cpp_pipeline8_ilu3_elu2_red_factor);
+        printf("   ");
+        printf(format, cpp_pipeline8_basic               );
+        printf(format, cpp_pipeline8_ilu3_red            );
+        printf(format, cpp_pipeline8_elu2_red_factor     );
+        printf(format, cpp_pipeline8_ilu3_elu2_red_factor);
         
         //printf("   ");
         //printf(format, cpp_basic32                      );
@@ -2529,6 +2530,7 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
         
         printf("   ");
         printf(format, cpp_basic64                      );
+        printf("   ");
         printf(format, cpp_fusion64_basic               );
         printf(format, cpp_fusion64_red                 );
         printf(format, cpp_fusion64_ilu3_red            );
