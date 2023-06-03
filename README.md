@@ -16,15 +16,10 @@ Pour implémenter les algorithmes de morphologie, on a utilisé plusieurs optimi
 
 ## Pour lancer 
 
-Exécutez la commande : make 
+Exécutez la commande : make  
 Puis la commande : ./exe/motion_acc.exe  
   
 Note : Vérifiez bien ce qui va être exécuté en regardant dans le fichier main.c
-
-## Capture d'écran
-
-![Capture d'ecran](https://i.postimg.cc/Hkc4tRfr/Capture-d-cran-du-2023-06-03-14-27-18.png)
-![Capture d'ecran 2](https://i.postimg.cc/DzZ1jDJV/Capture-d-cran-du-2023-06-03-14-32-44.png)
 
 ## Auteurs
 
