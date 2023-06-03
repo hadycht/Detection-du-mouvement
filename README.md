@@ -1,4 +1,4 @@
-# Detection-de-mouvements
+# Detection du mouvement
 
 Détection du mouvement à partir d'une séquence d'images (correspondante à une vidéo) en noir et blanc. 
 
@@ -14,7 +14,7 @@ Pour implémenter les algorithmes de morphologie, on a utilisé plusieurs optimi
 
 <img src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=&logoColor=white" data-canonical-src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
 
-## Pour lancer 
+## Pour Exécuter
 
 Exécutez la commande : make  
 Puis la commande : ./exe/motion_acc.exe  
