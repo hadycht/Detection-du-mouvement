@@ -2479,38 +2479,38 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
         printf("   ");
         printf(format, cpp_basic                      );
         
-        printf("   ");
-        printf(format, cpp_fusion_basic               );
-        printf(format, cpp_fusion_red                 );
-        printf(format, cpp_fusion_ilu5_red            );
-        printf(format, cpp_fusion_elu2_red            );
-        printf(format, cpp_fusion_ilu5_elu2_red       );
-        printf(format, cpp_fusion_ilu5_elu2_red_factor);
-        printf(format, cpp_fusion_ilu15_red           );
+        // printf("   ");
+        // printf(format, cpp_fusion_basic               );
+        // printf(format, cpp_fusion_red                 );
+        // printf(format, cpp_fusion_ilu5_red            );
+        // printf(format, cpp_fusion_elu2_red            );
+        // printf(format, cpp_fusion_ilu5_elu2_red       );
+        // printf(format, cpp_fusion_ilu5_elu2_red_factor);
+        // printf(format, cpp_fusion_ilu15_red           );
         
-        printf("   ");
-        printf(format, cpp_pipeline_basic               );
-        printf(format, cpp_pipeline_red                 );
-        printf(format, cpp_pipeline_ilu3_red            );
-        printf(format, cpp_pipeline_elu2_red            );
-        printf(format, cpp_pipeline_elu2_red_factor     );
-        printf(format, cpp_pipeline_ilu3_elu2_red       );
-        printf(format, cpp_pipeline_ilu3_elu2_red_factor);
+        // printf("   ");
+        // printf(format, cpp_pipeline_basic               );
+        // printf(format, cpp_pipeline_red                 );
+        // printf(format, cpp_pipeline_ilu3_red            );
+        // printf(format, cpp_pipeline_elu2_red            );
+        // printf(format, cpp_pipeline_elu2_red_factor     );
+        // printf(format, cpp_pipeline_ilu3_elu2_red       );
+        // printf(format, cpp_pipeline_ilu3_elu2_red_factor);
         
-        printf("   ");
-        printf(format, cpp_basic8                      );
-        printf("   ");
-        printf(format, cpp_fusion8_basic);
-        printf(format, cpp_fusion8_red                 );
-        printf(format, cpp_fusion8_ilu3_red            );
-        printf(format, cpp_fusion8_ilu3_elu2_red       );
-        printf(format, cpp_fusion8_ilu3_elu2_red_factor);
+        // printf("   ");
+        // printf(format, cpp_basic8                      );
+        // printf("   ");
+        // printf(format, cpp_fusion8_basic);
+        // printf(format, cpp_fusion8_red                 );
+        // printf(format, cpp_fusion8_ilu3_red            );
+        // printf(format, cpp_fusion8_ilu3_elu2_red       );
+        // printf(format, cpp_fusion8_ilu3_elu2_red_factor);
         
-        printf("   ");
-        printf(format, cpp_pipeline8_basic               );
-        printf(format, cpp_pipeline8_ilu3_red            );
-        printf(format, cpp_pipeline8_elu2_red_factor     );
-        printf(format, cpp_pipeline8_ilu3_elu2_red_factor);
+        // printf("   ");
+        // printf(format, cpp_pipeline8_basic               );
+        // printf(format, cpp_pipeline8_ilu3_red            );
+        // printf(format, cpp_pipeline8_elu2_red_factor     );
+        // printf(format, cpp_pipeline8_ilu3_elu2_red_factor);
         
         //printf("   ");
         //printf(format, cpp_basic32                      );
@@ -2530,13 +2530,13 @@ void bench_morpho_ouverture(int n0, int n1, int nstep)
         
         printf("   ");
         printf(format, cpp_basic64                      );
-        printf("   ");
-        printf(format, cpp_fusion64_basic               );
-        printf(format, cpp_fusion64_red                 );
-        printf(format, cpp_fusion64_ilu3_red            );
-        printf(format, cpp_fusion64_elu2_red            );
-        printf(format, cpp_fusion64_ilu3_elu2_red       );
-        printf(format, cpp_fusion64_ilu3_elu2_red_factor);
+        // printf("   ");
+        // printf(format, cpp_fusion64_basic               );
+        // printf(format, cpp_fusion64_red                 );
+        // printf(format, cpp_fusion64_ilu3_red            );
+        // printf(format, cpp_fusion64_elu2_red            );
+        // printf(format, cpp_fusion64_ilu3_elu2_red       );
+        // printf(format, cpp_fusion64_ilu3_elu2_red_factor);
         
         printf("   ");
         printf(format, cpp_pipeline64_basic               );
@@ -2577,10 +2577,10 @@ int test_morpho(int argc, char* argv[])
     
     //test_morpho_max();
     //test_morpho_min();
-    test_morpho_ouverture();
+    //test_morpho_ouverture();
     
     // exemple de benchmark
-    //bench_morpho_ouverture(128, 512, 8);
+    bench_morpho_ouverture(128, 512, 8);
     //bench_morpho_ouverture(128, 1024, 8);
     //bench_morpho_ouverture(512, 1024, 16);
     //bench_morpho_ouverture(1024, 2048,  16); //bug avec pipeline8
