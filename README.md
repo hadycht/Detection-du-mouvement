@@ -24,4 +24,4 @@ Note : Vérifiez bien ce qui va être exécuté en regardant dans le fichier mai
 ## Auteurs
 
 - [@hadycht](https://github.com/hadycht)
-- [@](https://github.com/KyroFrCode)
+- [@mehdiz18](https://github.com/mehdiz18)
