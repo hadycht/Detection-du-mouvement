@@ -12,7 +12,7 @@ Pour implémenter les algorithmes de morphologie, on a utilisé plusieurs optimi
 
 ## Fait avec
 
-<img src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=c&logoColor=white" data-canonical-src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
+<img src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=&logoColor=white" data-canonical-src="https://img.shields.io/badge/C-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
 
 ## Pour Commencer
 
