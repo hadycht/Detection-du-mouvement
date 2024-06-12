@@ -4,7 +4,7 @@ Détection du mouvement à partir d'une séquence d'images (correspondante à un
 
 ## A propos du projet
 
-Le projet consiste en deux étapes. Le première étape étant la détectiond du mouvement, et la deuxième est le Traitement du bruit.
+Le projet consiste en deux étapes. Le première étape étant la détection du mouvement, et la deuxième est le Traitement du bruit.
 Pour l'algorithme de détection de mouvement, on a utilisé l'agorithme Sigma-Delta (SD ou Σ∆). Ce dernier est détaillé dans le rapport du projet, n'hésitez pas à le voir.  
 Pour le traitement du bruit, on a utilisé les algorithmes de morphologie: Erosion, Dilatation, Ouverture et Fermeture. Eux aussi sont détaillés dans le rapport.   
 Pour implémenter les algorithmes de morphologie, on a utilisé plusieurs optimisations : Optimisations Domain Specific : fusion / factorisation d’opérateurs, Optimisations logicielles : pipeline d’opérateurs et Optimisation des formats de calcul et de stockage en mémoire. Celles ci sont détaillées dans le rapport et même dans l'énoncé du projet.   
